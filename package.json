@@ -1,0 +1,10 @@
+{
+  "name": "discourse-collection-view",
+  "version": "1.0.0",
+  "repository": "https://github.com/ScottMastro/discourse-collection-view",
+  "author": "ScottMastro",
+  "license": "",
+  "devDependencies": {
+    "eslint-config-discourse": "^3.1.0"
+  }
+}

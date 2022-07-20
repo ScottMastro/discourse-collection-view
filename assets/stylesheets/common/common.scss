@@ -1,0 +1,136 @@
+
+.collection-view-header{
+	display: flex;
+	column-gap: 1em;
+	align-items: center;
+	.collection-poster-avatar{
+		border-radius: 50%;
+	}
+}
+
+.collection-stream{
+  flex: 5;
+  display: grid;
+  overflow-y: scroll; 
+  height:95vh;
+  position: sticky;
+  top: 4em;
+}
+
+.collection-selected{
+	.post-body{
+		max-height: none;
+	}
+}
+
+.collection-view-main{
+  display: flex;
+}
+
+.collection-item-date{
+	margin-left: 1em;
+	margin-top: 0.5em;
+}
+.collection-item {
+	display: flex;
+}
+
+.collection-item-timeline {
+
+	.timeline-line {
+		background-color: var(--tertiary);
+		width: 1em;
+		height: 100%;
+		margin: auto;
+		margin-top: -10px;
+		display: flex;
+		overflow: visible;
+	}
+	.timeline-circle {
+		position: relative;
+		z-index: 1;
+		margin: auto;
+		margin-top: 2em;
+		width: 3em;
+		height: 3em;
+		-webkit-border-radius: 3em;
+		-moz-border-radius: 3em;
+		border-radius: 3em;
+		background: var(--tertiary);
+		border: 1em solid var(--tertiary-high);
+	}
+	.timeline-circle:hover {
+		background: var(--highlight);
+		border: 1em solid var(--highlight-high);
+
+	}
+}
+
+.collection-item-gallery {
+	//background-color: var(--tertiary);
+	margin: 0.25em;
+	margin-bottom: 0.5em;
+	flex: 6;
+	padding-bottom: 0.5em;
+
+	ul {
+		list-style-type: none;
+	}
+	ul li {
+		position: relative;
+		float: left;
+		width: 80px;
+		height: 80px;
+		padding: 0.25em;
+		z-index: 0;
+	}
+	ul li:hover {
+		z-index: 5;
+	}
+	/* animation */
+	ul li, li img {
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
+	}
+
+	/* Make sure z-index is higher on hover */
+	/* Ensure that hover image overlapped the others */
+	/* Image is position nicely under li */
+	ul li img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		border: 1px solid #dddddd;
+		padding: 2px;
+		width: 80px;
+		height: 80px;
+		background: #f0f0f0;
+	}
+	ul li img:hover {
+		width: 120px;
+		height: 120px;
+		margin-top: -80px;
+		margin-left: -80px;
+		top: 65%;
+		left: 65%;
+	}
+
+}
+
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+	.wrapper {
+		width: 500px;
+	}
+}
+@media only screen and (max-width: 498px) {
+	.wrapper {
+		width: 300px;
+	}
+	.collection-item ul {
+		list-style-type: none;
+		margin: 0;
+	}
+}

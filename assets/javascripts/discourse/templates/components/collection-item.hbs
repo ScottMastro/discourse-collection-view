@@ -1,0 +1,22 @@
+<div class="collection-item">
+
+  <div class="collection-item-timeline">
+    <button {{action selectItem}} class="timeline-circle"></button>
+
+    <div class="timeline-line"></div>
+  </div>
+
+  <div class="collection-item-gallery">
+    <hr>
+  <div class="collection-item-date">{{raw-date post.date}}</div>
+
+    <ul>
+      {{#each post.imgs as |i|}}
+        <li> 
+          <img class="collection-item-image" src="{{i}}">
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
