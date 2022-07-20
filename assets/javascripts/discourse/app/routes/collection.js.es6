@@ -7,10 +7,6 @@ export default DiscourseRoute.extend({
     model(params) {
       return ajax(`/collection/${params.id}.json`)
         .then((result) => {
-
-          result["selected-post"] = result.posts[0]
-
-          console.log(result)
           return result;
         }).catch(popupAjaxError);
     }

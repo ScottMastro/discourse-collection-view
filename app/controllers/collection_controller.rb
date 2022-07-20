@@ -4,14 +4,15 @@ class CollectionView::CollectionController < ::ApplicationController
 
   def index
 
-    topic = Topic.where(id: 25)
-    posts = Post.where(topic_id: 25)
+    topic = Topic.where(id: params[:id])
+    posts = Post.where(topic_id: params[:id])
     
     user = nil
     avatar = nil
 
-    if ! topic.nil?
+    if ! topic.nil? & ! topic[0].nil?
       topic = topic[0]
+
       user = User.find_by(id: topic[:user_id])
       if ! user.nil?
         avatar_template = user.avatar_template.dup

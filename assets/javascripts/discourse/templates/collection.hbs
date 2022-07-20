@@ -1,32 +1,39 @@
-<div class="collection-view">
+{{#if model.topic}}
 
-  <div class="collection-view-header">
-    <img class="collection-poster-avatar" src={{model.avatar}}>
-    <div>
-      <h2>{{model.topic.title}}</h2>
-      {{mount-widget widget="poster-name" args=model.user}}  
+  <div class="collection-view">
+
+    <div class="collection-view-header">
+      <img class="collection-poster-avatar" src={{model.avatar}}>
+      <div>
+        <h2>{{model.topic.title}}</h2>
+        {{mount-widget widget="poster-name" args=model.user}}  
+      </div>
     </div>
+    <br>
+
+    <div class="collection-view-main">
+
+      <div class="collection-selected">
+        {{#each this.model.posts as |post|}}
+          <div id="post-num-{{post.id}}"></div>
+          {{collection-post post=post}}
+        {{/each}}
+
+      </div>
+
+      <div class="collection-stream">
+        {{#each this.model.collection_posts as |post|}}
+          {{#if post.imgs}}
+            {{collection-item post=post selectItem=(action "selectItem" post.id)}}
+          {{/if}}
+        {{/each}}
+      </div>
+
+    </div>
+
   </div>
-  <br>
+{{else}}
 
-  <div class="collection-view-main">
+  Is this a collection thread? 🤔
 
-    <div class="collection-selected">
-      {{#each this.model.posts as |post|}}
-        <div id="post-num-{{post.id}}"></div>
-        {{collection-post post=post}}
-      {{/each}}
-
-    </div>
-
-    <div class="collection-stream">
-      {{#each this.model.collection_posts as |post|}}
-        {{#if post.imgs}}
-          {{collection-item post=post selectItem=(action "selectItem" post.id)}}
-        {{/if}}
-      {{/each}}
-    </div>
-
-  </div>
-
-</div>
+{{/if}}
