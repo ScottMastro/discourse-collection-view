@@ -10,6 +10,10 @@ class CollectionView::CollectionController < ::ApplicationController
     user = nil
     avatar = nil
 
+    if ! SiteSetting.collection_view_enabled
+      topic = nil
+    end
+    
     if ! topic.nil? & ! topic[0].nil?
       topic = topic[0]
 
