@@ -39,7 +39,7 @@
 
 	.timeline-line {
 		background-color: var(--tertiary);
-		width: 1em;
+		width: 0.3em;
 		height: 100%;
 		margin: auto;
 		margin-top: -10px;
@@ -50,18 +50,18 @@
 		position: relative;
 		z-index: 1;
 		margin: auto;
-		margin-top: 2em;
+		margin-top: 1.5em;
 		width: 3em;
 		height: 3em;
 		-webkit-border-radius: 3em;
 		-moz-border-radius: 3em;
 		border-radius: 3em;
 		background: var(--tertiary);
-		border: 1em solid var(--tertiary-high);
+		border: 0.5em solid var(--tertiary-high);
 	}
 	.timeline-circle:hover {
 		background: var(--highlight);
-		border: 1em solid var(--highlight-high);
+		border: 0.5em solid var(--highlight-high);
 
 	}
 }

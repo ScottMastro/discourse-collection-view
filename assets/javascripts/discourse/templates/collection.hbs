@@ -3,7 +3,9 @@
   <div class="collection-view">
 
     <div class="collection-view-header">
-      <img class="collection-poster-avatar" src={{model.avatar}}>
+      <div class="collection-view-avatar">
+        {{bound-avatar-template this.model.avatar_template "extra_large"}}
+      </div>
       <div>
         <h2>{{model.topic.title}}</h2>
         {{mount-widget widget="poster-name" args=model.user}}  

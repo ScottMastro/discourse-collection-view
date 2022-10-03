@@ -1,13 +1,19 @@
 import Controller from "@ember/controller";
+import { avatarImg } from "discourse/widgets/post";
+import { withPluginApi } from 'discourse/lib/plugin-api';
+
 
 export default Controller.extend({
 
   init() {
     this._super(...arguments);
+  
   },
 
   actions: {
     selectItem(post_id){
+
+      console.log(this.model.posts);
 
       for (let i = 0; i < this.model.posts.length; i++) {
         if (this.model.posts[i].id == post_id){
