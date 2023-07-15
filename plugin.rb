@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# name: discord-collection-view
+# name: discourse-collection-view
 # about: Convert collection threads to dedicated pages
 # version: 1.0.0
 # authors: ScottMastro
